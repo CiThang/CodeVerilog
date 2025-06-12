@@ -1,0 +1,124 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001678e5b6300 .scope module, "mux_4_1_tb" "mux_4_1_tb" 2 3;
+ .timescale -9 -9;
+v000001678e600000_0 .var "d0", 0 0;
+v000001678e6005a0_0 .var "d1", 0 0;
+v000001678e5ff880_0 .var "d2", 0 0;
+v000001678e5ffd80_0 .var "d3", 0 0;
+v000001678e600640_0 .var "sel", 1 0;
+v000001678e5ffe20_0 .net "y", 0 0, L_000001678e5ffc40;  1 drivers
+S_000001678e5b6490 .scope module, "uut" "mux_4_1" 2 10, 3 1 0, S_000001678e5b6300;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 1 "d0";
+    .port_info 1 /INPUT 1 "d1";
+    .port_info 2 /INPUT 1 "d2";
+    .port_info 3 /INPUT 1 "d3";
+    .port_info 4 /INPUT 2 "sel";
+    .port_info 5 /OUTPUT 1 "y";
+L_000001678e600958 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v000001678e566b60_0 .net/2u *"_ivl_0", 1 0, L_000001678e600958;  1 drivers
+v000001678e566900_0 .net *"_ivl_10", 0 0, L_000001678e5ffb00;  1 drivers
+L_000001678e600a30 .functor BUFT 1, C4<11>, C4<0>, C4<0>, C4<0>;
+v000001678e5a4850_0 .net/2u *"_ivl_12", 1 0, L_000001678e600a30;  1 drivers
+v000001678e5b6620_0 .net *"_ivl_14", 0 0, L_000001678e6006e0;  1 drivers
+L_000001678e600a78 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v000001678e5b66c0_0 .net/2u *"_ivl_16", 0 0, L_000001678e600a78;  1 drivers
+v000001678e5b3b90_0 .net *"_ivl_18", 0 0, L_000001678e600780;  1 drivers
+v000001678e5b3c30_0 .net *"_ivl_2", 0 0, L_000001678e600140;  1 drivers
+v000001678e5b3cd0_0 .net *"_ivl_20", 0 0, L_000001678e5ff920;  1 drivers
+v000001678e5ffce0_0 .net *"_ivl_22", 0 0, L_000001678e5ff9c0;  1 drivers
+L_000001678e6009a0 .functor BUFT 1, C4<01>, C4<0>, C4<0>, C4<0>;
+v000001678e600320_0 .net/2u *"_ivl_4", 1 0, L_000001678e6009a0;  1 drivers
+v000001678e6003c0_0 .net *"_ivl_6", 0 0, L_000001678e600280;  1 drivers
+L_000001678e6009e8 .functor BUFT 1, C4<10>, C4<0>, C4<0>, C4<0>;
+v000001678e6000a0_0 .net/2u *"_ivl_8", 1 0, L_000001678e6009e8;  1 drivers
+v000001678e600500_0 .net "d0", 0 0, v000001678e600000_0;  1 drivers
+v000001678e5fff60_0 .net "d1", 0 0, v000001678e6005a0_0;  1 drivers
+v000001678e600460_0 .net "d2", 0 0, v000001678e5ff880_0;  1 drivers
+v000001678e5ffa60_0 .net "d3", 0 0, v000001678e5ffd80_0;  1 drivers
+v000001678e5ffec0_0 .net "sel", 1 0, v000001678e600640_0;  1 drivers
+v000001678e6001e0_0 .net "y", 0 0, L_000001678e5ffc40;  alias, 1 drivers
+L_000001678e600140 .cmp/eq 2, v000001678e600640_0, L_000001678e600958;
+L_000001678e600280 .cmp/eq 2, v000001678e600640_0, L_000001678e6009a0;
+L_000001678e5ffb00 .cmp/eq 2, v000001678e600640_0, L_000001678e6009e8;
+L_000001678e6006e0 .cmp/eq 2, v000001678e600640_0, L_000001678e600a30;
+L_000001678e600780 .functor MUXZ 1, L_000001678e600a78, v000001678e5ffd80_0, L_000001678e6006e0, C4<>;
+L_000001678e5ff920 .functor MUXZ 1, L_000001678e600780, v000001678e5ff880_0, L_000001678e5ffb00, C4<>;
+L_000001678e5ff9c0 .functor MUXZ 1, L_000001678e5ff920, v000001678e6005a0_0, L_000001678e600280, C4<>;
+L_000001678e5ffc40 .functor MUXZ 1, L_000001678e5ff9c0, v000001678e600000_0, L_000001678e600140, C4<>;
+    .scope S_000001678e5b6300;
+T_0 ;
+    %vpi_call 2 20 "$dumpfile", "mux_4_1_tb.vcd" {0 0 0};
+    %vpi_call 2 21 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001678e5b6300 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001678e600000_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001678e6005a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001678e5ff880_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001678e5ffd80_0, 0, 1;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v000001678e600640_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001678e600000_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001678e6005a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001678e5ff880_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001678e5ffd80_0, 0, 1;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v000001678e600640_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001678e600000_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001678e6005a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001678e5ff880_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001678e5ffd80_0, 0, 1;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v000001678e600640_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001678e600000_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001678e6005a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001678e5ff880_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001678e5ffd80_0, 0, 1;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v000001678e600640_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001678e600000_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001678e6005a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001678e5ff880_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001678e5ffd80_0, 0, 1;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v000001678e600640_0, 0, 2;
+    %delay 10, 0;
+    %vpi_call 2 42 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "mux_4_1_tb.v";
+    "./mux_4_1.v";
