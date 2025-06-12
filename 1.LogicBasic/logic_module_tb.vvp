@@ -1,0 +1,82 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2009.vpi";
+S_000001f8b1344910 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_000001f8b1356fa0 .scope module, "logic_module_tb" "logic_module_tb" 3 3;
+ .timescale -9 -9;
+v000001f8b13485b0_0 .var "a", 0 0;
+v000001f8b1352eb0_0 .var "b", 0 0;
+v000001f8b1352b90_0 .net "v", 0 0, L_000001f8b13486c0;  1 drivers
+v000001f8b1352f50_0 .net "w", 0 0, L_000001f8b1323160;  1 drivers
+v000001f8b13529b0_0 .net "x", 0 0, L_000001f8b1309910;  1 drivers
+v000001f8b1353090_0 .net "y", 0 0, L_000001f8b1322d60;  1 drivers
+v000001f8b13538b0_0 .net "z", 0 0, L_000001f8b1322fe0;  1 drivers
+S_000001f8b1357130 .scope module, "lm" "logic_module" 3 8, 4 1 0, S_000001f8b1356fa0;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "x";
+    .port_info 3 /OUTPUT 1 "y";
+    .port_info 4 /OUTPUT 1 "z";
+    .port_info 5 /OUTPUT 1 "w";
+    .port_info 6 /OUTPUT 1 "v";
+L_000001f8b1309910 .functor AND 1, v000001f8b13485b0_0, v000001f8b1352eb0_0, C4<1>, C4<1>;
+L_000001f8b1322d60 .functor OR 1, v000001f8b13485b0_0, v000001f8b1352eb0_0, C4<0>, C4<0>;
+L_000001f8b1322fe0 .functor XOR 1, v000001f8b13485b0_0, v000001f8b1352eb0_0, C4<0>, C4<0>;
+L_000001f8b1323160 .functor NOT 1, v000001f8b13485b0_0, C4<0>, C4<0>, C4<0>;
+L_000001f8b1348650 .functor AND 1, v000001f8b13485b0_0, v000001f8b1352eb0_0, C4<1>, C4<1>;
+L_000001f8b13486c0 .functor NOT 1, L_000001f8b1348650, C4<0>, C4<0>, C4<0>;
+v000001f8b1344aa0_0 .net *"_ivl_8", 0 0, L_000001f8b1348650;  1 drivers
+v000001f8b1322930_0 .net "a", 0 0, v000001f8b13485b0_0;  1 drivers
+v000001f8b1309870_0 .net "b", 0 0, v000001f8b1352eb0_0;  1 drivers
+v000001f8b130bcd0_0 .net "v", 0 0, L_000001f8b13486c0;  alias, 1 drivers
+v000001f8b130bd70_0 .net "w", 0 0, L_000001f8b1323160;  alias, 1 drivers
+v000001f8b13572c0_0 .net "x", 0 0, L_000001f8b1309910;  alias, 1 drivers
+v000001f8b1357360_0 .net "y", 0 0, L_000001f8b1322d60;  alias, 1 drivers
+v000001f8b1348510_0 .net "z", 0 0, L_000001f8b1322fe0;  alias, 1 drivers
+    .scope S_000001f8b1356fa0;
+T_0 ;
+    %vpi_call/w 3 19 "$dumpfile", "logic_module_tb.vcd" {0 0 0};
+    %vpi_call/w 3 20 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001f8b1356fa0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001f8b13485b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001f8b1352eb0_0, 0, 1;
+    %delay 5, 0;
+    %vpi_call/w 3 24 "$display", "Input a=%b, b=%b => Output x=%b, y=%b, z=%b, w=%b, v=%b", v000001f8b13485b0_0, v000001f8b1352eb0_0, v000001f8b13529b0_0, v000001f8b1353090_0, v000001f8b13538b0_0, v000001f8b1352f50_0, v000001f8b1352b90_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001f8b13485b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001f8b1352eb0_0, 0, 1;
+    %delay 5, 0;
+    %vpi_call/w 3 27 "$display", "Input a=%b, b=%b => Output x=%b, y=%b, z=%b, w=%b, v=%b", v000001f8b13485b0_0, v000001f8b1352eb0_0, v000001f8b13529b0_0, v000001f8b1353090_0, v000001f8b13538b0_0, v000001f8b1352f50_0, v000001f8b1352b90_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001f8b13485b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001f8b1352eb0_0, 0, 1;
+    %delay 5, 0;
+    %vpi_call/w 3 30 "$display", "Input a=%b, b=%b => Output x=%b, y=%b, z=%b, w=%b, v=%b", v000001f8b13485b0_0, v000001f8b1352eb0_0, v000001f8b13529b0_0, v000001f8b1353090_0, v000001f8b13538b0_0, v000001f8b1352f50_0, v000001f8b1352b90_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001f8b13485b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001f8b1352eb0_0, 0, 1;
+    %delay 5, 0;
+    %vpi_call/w 3 33 "$display", "Input a=%b, b=%b => Output x=%b, y=%b, z=%b, w=%b, v=%b", v000001f8b13485b0_0, v000001f8b1352eb0_0, v000001f8b13529b0_0, v000001f8b1353090_0, v000001f8b13538b0_0, v000001f8b1352f50_0, v000001f8b1352b90_0 {0 0 0};
+    %vpi_call/w 3 35 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "logic_module_tb.v";
+    "logic_module.v";

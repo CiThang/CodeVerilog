@@ -1,0 +1,6 @@
+VCD info: dumpfile logic_module_tb.vcd opened for output.
+Input a=0, b=0 => Output x=0, y=0, z=0, w=1, v=1
+Input a=0, b=1 => Output x=0, y=1, z=1, w=1, v=1
+Input a=1, b=0 => Output x=0, y=1, z=1, w=0, v=1
+Input a=1, b=1 => Output x=1, y=1, z=0, w=0, v=0
+logic_module_tb.v:35: $finish called at 20 (1ns)
